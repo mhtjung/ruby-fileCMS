@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Mike's Lil CMS</title>
+    <link href="stylesheets/cms.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <% if session[:message] %>
+      <p class="message"><%= session.delete(:message) %></p>
+    <% end %>
+    <header>
+      <a href="/">Home</a>
+    </header>
+    <main>
+     <%= yield %>
+    </main>
+  </body>
